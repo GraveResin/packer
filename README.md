@@ -1,6 +1,6 @@
 # Packer
 
-This is just a basic packing thing I made that packs multiples of both signed and unsigned values into larger vlaues. I decided not to make packing of floats since the f8 isn't in rust and f128 is unstable. I don't know if this will be useful for anyone or if this is even made well. still learning the language and programming in general. :]
+This is just a basic packing thing I made that packs multiples of both signed and unsigned values into larger values. I decided not to make packing of floats since the f8 isn't in rust and f128 is unstable. I don't know if this will be useful for anyone or if this is even made well. still learning the language and programming in general. :]
 
 Also if there is a mistake in this readme or if it could be better then you all know what to do.
 
