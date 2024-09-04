@@ -4,11 +4,10 @@ This is just a basic packing thing I made that packs multiples of both signed an
 
 Also if there is a mistake in this readme or if it could be better then you all know what to do.
 
-You can store up to four i8 values into a single i32 value and the same for the unsigned counterpart. The packs range from as small as two i8 values into a single i16, to sixteen i8 values into a single i128.
 
 ## Example:
 
-- This is for packing two i8 values into an i16. 
+- You can store up to two i8 values into a single i16 value and the same for the unsigned counterpart. The packs range from as small as two i8 values into a single i16, to sixteen i8 values into a single i128. This is the function for packing two i8 values into a single i16:
 ```rust
 pub fn packi8toi16(a: i8, b: i8) -> i16 {
     let mut pack: i16 = 0;
@@ -30,6 +29,19 @@ fn main() {
     let number1: i8 = 10;
     packed_data = packi8toi16(number0, number1);
     println!("number0 is {}\nnumber1 is {}", (packed_data & 0xFF) as i8, ((packed_data >> 8) & 0xFF) as i8);
+}
+```
+This is another pack signed value pack function for four i8 values into a single i32.
+```rust
+pub fn packi8toi32(a: i8, b: i8, c: i8, d: i8) -> i32 {
+    let mut pack: i32 = 0;
+    let values = [a, b, c, d];
+
+    for (i, &value)  in values.iter().enumerate() {
+        let data_shift = i * 8;
+        pack |= (value as i32 & 0xFF) << data_shift;
+    }
+    pack
 }
 ```
 
@@ -60,7 +72,3 @@ fn main() {
 
 }
 ```
-
-
-
-

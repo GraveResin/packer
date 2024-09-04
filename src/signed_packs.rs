@@ -198,7 +198,6 @@ pub fn unpacki6toi32(pack: i32) -> (i16, i16) {
 
 ////////////(i8)////////////
 pub fn packi8toi32(a: i8, b: i8, c: i8, d: i8) -> i32 {
-    //todo!("This for loop use works and must be used in all pack functions");
     let mut pack: i32 = 0;
     let values = [a, b, c, d];
 
